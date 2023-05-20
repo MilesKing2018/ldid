@@ -168,11 +168,15 @@ Hash Sign(const void *idata, size_t isize, std::streambuf &output, const std::st
 
 #endif//LDID_HPP
 
+#ifdef __WIN32
+    #define EXPORT __declspec(dllexport)
+#endif
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-    __declspec(dllexport) void run() {
+    EXPORT void run() {
         printf("Hello World\n");
     }
 #ifdef __cplusplus
