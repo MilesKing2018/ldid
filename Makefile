@@ -41,7 +41,7 @@ all: ldid$(EXT)
 	$(CXX) -c -std=c++11 $(CXXFLAGS) $(LIBCRYPTO_INCLUDES) $(LIBPLIST_INCLUDES) $(CPPFLAGS) -I. -DLDID_VERSION=\"$(VERSION)\" $< -o $@
 
 ldid$(EXT): $(SRC:%=%.o)
-	$(CXX) -o $@ $^ $(LDFLAGS) $(LIBCRYPTO_LIBS) $(LIBPLIST_LIBS) $(LIBS)
+	$(CXX) -shared -o $@ $^ $(LDFLAGS) $(LIBCRYPTO_LIBS) $(LIBPLIST_LIBS) $(LIBS)
 
 install: all
 	$(INSTALL) -d $(DESTDIR)$(BINDIR)/
