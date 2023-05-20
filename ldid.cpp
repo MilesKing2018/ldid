@@ -3313,7 +3313,7 @@ void cleanupfunc(void) {
 }
 
 #ifndef LDID_NOTOOLS
-int run_main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
     std::atexit(cleanupfunc);
     OpenSSL_add_all_algorithms();
 # if OPENSSL_VERSION_MAJOR >= 3
