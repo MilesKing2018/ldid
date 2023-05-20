@@ -11,6 +11,10 @@
 #include <string>
 #include <vector>
 
+extern "C" __declspec(dllexport) void run() {
+    printf("Hello World\n");
+}
+
 namespace ldid {
 
 // I wish Apple cared about providing quality toolchains :/
