@@ -11,9 +11,6 @@
 #include <string>
 #include <vector>
 
-extern "C" __declspec(dllexport) void run() {
-    printf("Hello World\n");
-}
 
 namespace ldid {
 
@@ -170,3 +167,14 @@ Hash Sign(const void *idata, size_t isize, std::streambuf &output, const std::st
 }
 
 #endif//LDID_HPP
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+    __declspec(dllexport) void run() {
+        printf("Hello World\n");
+    }
+#ifdef __cplusplus
+}
+#endif
